@@ -1,0 +1,76 @@
+.menu {
+    .link:nth-child(1)::before {
+        transition: width 400ms ease-in-out;
+        width: 3px;  
+    }
+    .link:nth-child(1):hover:before {
+        transition: width 400ms ease-in-out;
+        width: 48px;  
+    }
+    .link:nth-child(2)::before {
+        transition: width 400ms ease-in-out;
+        width: 65px;
+    }
+    .link:nth-child(3):hover::before {
+        transition: width 400ms ease-in-out;
+        width: 45px;
+    }
+}
+
+.contact {
+    width: 60%;
+    min-width: 250px;
+    max-width: 400px;
+    height: 70vh;
+    min-height: 400px;
+    margin: 2em auto;
+    padding: .4em;
+    border: 2px solid gray;
+    background-color: lightgray;
+    overflow: hidden;
+    
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        
+        label:nth-child(2) {
+            margin-top: 2em;
+        }
+
+        input {
+            position: relative;
+            height: 2em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            outline: 0;
+            background-color: whitesmoke;
+            border: none;
+            font-size: 1.2rem;
+        }
+        textarea {
+            position: relative;
+            height: 5em;
+            outline: 0;
+            border: none;
+            border-radius: 5px;
+        }
+        input:focus,
+        textarea:focus {
+            border: 1px solid gray;
+        }
+        input:last-child {
+            margin-top: 2em;
+        }
+        input:hover:last-child {
+            background-color: rgba(188, 188, 235, 0.484);
+            color: #fff;
+            transition: background-color 500ms ease, color 300ms ease-in;
+
+        }
+        
+    }
+}
+

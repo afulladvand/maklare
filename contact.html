@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+    <script src="./js/mail.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+         (function(){
+             emailjs.init(process.env.PUBLIC_KEY);
+         })();
+    </script>
+</head>
+<body>
+    <header>
+        <ul class="menu" id="menu">
+            <li class="link"><a href="main.html">Home</a></li>
+            <li class="link"><a href="contact.html">Contact</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+        </ul> 
+        <div class="nav-bar-container">
+            <div class="links-container">
+                <button class="logo">&#9750;</button>
+            </div>
+            <div class="menu-icon">
+                <button class="hamburger" id="hamburger">&#9776;</button>
+            </div>
+                
+        </div>
+    </header>
+    <section class="main-header">
+        <div class="main-form">
+            <p class="title">Vill du veta värdet på din bostad?</p>
+            <p class="content">Kontakta oss</p>
+            <input class="user-info" type="text" name="name" placeholder="Förnamn *">
+            <input class="user-info" type="text" name="family" placeholder="Efternamn *">
+            <input class="user-info" type="tel" name="tel" placeholder="Mobil*">
+            <input class="user-info" type="email" name="email" placeholder="E-post*">
+            <div class="chec">
+                <input  type="checkbox" name="chec" class="chec">
+                <label for="chec">Jag godkänner att mina uppgifter hanteras enlighet med Dataskyddsförordningen (GDPR) *</label>
+            </div>
+
+            <button></button>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <form method="post">
+            <input type="hidden" >
+            <label for="name">Name</label>
+            <input type="text" id="name" value=" ">
+            <label for="email">Email</label>
+            <input type="email" id="email" value=" ">
+            <label for="message">Message</label>
+            <textarea id="message"></textarea>
+            <input type="button" onclick="sendMail()" value="send">
+        </form>
+    </section>
+    <div class="content-counter">
+        <p class="item">Våra mäklare & medarbetare: 51</p>
+        <p class="item">Tidigare försäljningar: 3000</p>
+        <p class="item">Aktuella försäljningar: 200</p>
+    </div>
+    <section class="footer">
+        <a href="https://www.icons8.com/"><img src="./assets/icons8-facebook.svg" alt="facebook icon"></a>
+        <a href="https://www.icons8.com/"><img src="./assets/icons8-instagram.svg" alt="instagram icon"></a>
+        <a href="https://www.icons8.com/"><img src="./assets/icons8-twitter.svg" alt="twitter icon"></a>
+        <a href="#">Sälj med oss</a>
+        <a href="#">Köpa med oss</a>
+        <a href="#">Marknader</a>
+    </section>
+    <div class="last-background"></div>
+    <script src="./js/contact.js"></script>
+</body>
+</html>

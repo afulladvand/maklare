@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;900&display=swap');
+* , *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.msg-upp {
+    animation: msg-upp 700ms forwards;
+}
+@keyframes msg-upp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-550px);
+        opacity: 0;
+    }
+}
+.msg-down {
+    animation: msg-down 700ms forwards;
+}
+@keyframes msg-down {
+    from {
+        transform: translateY(-550px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.first-message {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+    .msg-btn {
+        position: relative;
+        width: 70%;
+        margin:1em auto;
+        max-width: 300px;
+    }
+    .close-btn {
+        position: absolute;
+        padding: 1em;
+        top: 3%;
+        left: 55%;
+        background-image: url(../assets/message-background.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        color: #fff;
+        cursor: pointer;
+        transition: color 300ms ease-in;
+        
+    }
+    .close-btn:hover,
+    .close-btn:active {
+        color: rgb(166, 46, 46);
+        transition: color 300ms ease-in;
+    }
+    
+}
+.lightness {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: #11111190;
+}
+
+@media screen and (max-width: 350px) {
+    .close-btn {
+        top: -.5em;
+        left: 54%;
+        font-size: .8em;
+    }
+    .msg-btn {
+    width: 90%;
+}
+}
+
+.nav-bar-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: lightgray;
+    .logo,
+    .hamburger {
+        font-size: 3rem;
+        background-color: rgba(255, 255, 255, 0);
+        background-image: none;
+        border: none;
+        cursor: pointer;
+    }
+    .hamburger {
+        font-size: 2rem;
+    }
+    .menu-icon {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
+
+.menu {
+    padding-top: 2.5em;
+    padding-left: 0;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: lightgray;
+    left: 0;
+    top: -170px;
+    transition: top 700ms ease-in-out;
+
+    
+
+    .link {
+        position: relative;
+        margin: 1em auto;
+        padding: 0;
+        list-style: none;
+        text-align: left;
+        width: 25%;
+        height: 2em;
+
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+    }
+    .link::before {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        background-color: red;
+        transition: width 400ms ease-in-out;
+    }
+    .link:nth-child(1)::before {
+        transition: width 400ms ease-in-out;
+        width: 48px;  
+    }
+    .link:nth-child(2):hover::before {
+        transition: width 400ms ease-in-out;
+        width: 65px;
+    }
+    .link:nth-child(3):hover::before {
+        transition: width 400ms ease-in-out;
+        width: 45px;
+    }
+}
+.open {
+    animation: open 700ms forwards;
+}
+@keyframes open {
+    from {
+        transform: translateY(10px)
+    }
+    to {
+        transform: translateY(250px);
+    }
+}
+
+.close {
+    animation: close 700ms forwards;
+}
+@keyframes close {
+    from {
+        transform: translateY(250px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.main-header {
+    width: 100%;
+    min-height: 681px;
+    height: 90vh;
+    background-color: #fff;
+    background-image: url(../assets/inside-weather-Uxqlfigh6oE-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 5rem;
+
+
+    .main-form {
+        width: 70%;
+        max-width: 378px;
+        margin: 0 auto;
+        padding: 1rem;
+        background-color: rgba(211, 211, 211, 0.9);
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 8px;
+        .user-info {
+            height: 3rem;
+            margin: .3rem 0;
+            border: none;
+            outline: 0;
+            border-radius: 8px;    
+        }
+        .user-info:focus,
+        .user-info:active,
+        .user-info:hover {
+            border: 3px solid rgba(39, 107, 235, 0.546);
+        }
+        .chec {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+       button {
+        cursor: pointer;
+        position: relative;
+        height: 3rem;
+        border:3px solid #276beb8b;
+        border-radius: 8px;
+        background-color: #ffffff00;
+        color: #000;
+        font-size: 1.3rem;
+        font-weight: 550;
+       }
+       button::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        background-image: linear-gradient(125deg, rgb(146, 178, 239) 10%, rgba(255,255,255,0) 100%);
+        transition: width 500ms ease-in;
+        content: '';
+       }
+       button:hover::before {
+        width: 100%;
+        transition: width 500ms ease-in;
+       }
+       button::after {
+        content: 'BOKA';
+        position: absolute;
+        left: 0;
+        top:3px;
+        width: 100%;
+        height: 100%;
+       }
+    }
+}
+
+.content-container {
+    background-color: #fff;
+    overflow: hidden;
+
+    .first-content {
+        padding: 1rem;
+        height: 100vh;
+        min-height: 500px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+
+
+        .content-img-stockholm {
+            width: 90%;
+            height: 320px;
+            background-image: url(../assets/stockholm.jpg);
+            background-size: cover;
+            background-position: center;
+
+        }
+        .title {
+            font-size: 22px;
+        }
+        .content {
+            font-size: 18px;
+        }
+    }
+
+
+   
+}
+.from-left {
+    animation: fromLeft 800ms ease;
+}
+.scale-upp {
+    animation: scaleUpp 800ms ease;
+}
+.from-right {
+    animation: fromRight 800ms ease;
+}
+.second-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    min-height: 500px;
+    padding: 1rem;
+    .content-img-goteborg {
+        margin-top: 2rem;
+        background-image: url(../assets/goteborg.jpg);
+        width: 100%;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+    }
+    .title {
+        font-size: 22px;
+    }
+    .content {
+        font-size: 18px;
+    }
+}
+
+@keyframes fromLeft {
+    from {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes scaleUpp {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fromRight {
+    from {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.content-counter{
+    height: 40vh;
+    min-height: 300px;
+    background-color: #ffffff20;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-image: url(../assets/stockholm.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    p {
+        color: #000000;
+        background-color: rgba(211, 211, 211, 0.85);
+        border-radius: 8px;
+        padding: .3em;
+        font-size: 1rem;
+    }
+    
+}
+
+
+
+
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    img {
+        width: 40px;
+        height: 40px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: .5rem;
+    }
+
+}
+
+@media screen and (min-width: 800px){
+
+    header {
+        padding-right: 2em;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        background-color: lightgray;
+        .menu-icon {
+            display: none;
+        }
+        .menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 50px;
+            padding-left: 20px;
+            padding-top: 0;
+
+
+
+            padding-top: 2em;
+            padding-left: 0;
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: lightgray;
+            // left: 0;
+            // top: -170px;
+            transition: top 700ms ease-in-out;
+        }
+    } 
+    .main-header {
+        background-image: url(../assets/inside-weather-Uxqlfigh6oE-unsplash.jpg);
+    }
+
+    .content-container {
+        width: 80%;
+        margin: auto;
+        .first-content {
+            height: 100vh;
+    
+    
+            .content-img-stockholm {
+                width: 70%;
+                height: 320px;
+    
+            }
+            .title {
+                width: 70%;
+            }
+            .content {
+                width: 70%;
+            }
+        }
+        .second-content{
+            height: 100vh;
+            .content-img-goteborg {
+                width: 70%;
+                height: 320px;
+            }
+            .title {
+                width: 70%;
+            }
+            .content {
+                width: 70%;
+            }
+        }
+    }
+
+    .content-counter {
+        flex-direction: row;
+    }
+     
+    .content-counter{
+        p {
+            padding: .6em;
+            font-size: 1.5rem;
+        }
+    }
+    
+    .footer {       
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+        }
+    
+    }
+}
+
+.display-none {
+    visibility: hidden;
+}
